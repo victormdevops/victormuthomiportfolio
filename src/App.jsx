@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   const [step, setStep] = useState(0);
@@ -33,53 +34,57 @@ export default function App() {
   };
 
   return (
-    <div className="bg-black text-white font-mono min-h-screen flex flex-col">
-      {/* Header */}
-      <Header />
+    <>
+      <div className="bg-black text-white font-mono min-h-screen flex flex-col">
+        {/* Header */}
+        <Header />
 
-      {/* Main content */}
-      <main className="flex-grow space-y-16">
-        {/* Banner Section */}
-        <section id="banner">
-          <Banner onComplete={handleBannerComplete} />
-        </section>
-
-        {/* About Me Section */}
-        {step >= 1 && (
-          <section id="about" ref={aboutRef}>
-            <AboutMe onComplete={handleAboutComplete} />
+        {/* Main content */}
+        <main className="flex-grow space-y-16">
+          {/* Banner Section */}
+          <section id="banner">
+            <Banner onComplete={handleBannerComplete} />
           </section>
-        )}
 
-        {/* Skills Section (with embedded hint) */}
-        {step >= 2 && (
-          <section id="skills" ref={skillsRef}>
-            <Skills />
-          </section>
-        )}
-
-        {/* User scrolls manually after skills */}
-        {step >= 2 && (
-          <>
-            <section id="projects">
-              <Projects />
+          {/* About Me Section */}
+          {step >= 1 && (
+            <section id="about" ref={aboutRef}>
+              <AboutMe onComplete={handleAboutComplete} />
             </section>
+          )}
 
-            <section id="experience">
-              <Experience />
+          {/* Skills Section (with embedded hint) */}
+          {step >= 2 && (
+            <section id="skills" ref={skillsRef}>
+              <Skills />
             </section>
+          )}
 
-            <section id="contact">
-              <Contact />
-            </section>
-          </>
-        )}
-      </main>
+          {/* User scrolls manually after skills */}
+          {step >= 2 && (
+            <>
+              <section id="projects">
+                <Projects />
+              </section>
 
-      {/* Footer */}
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+              <section id="experience">
+                <Experience />
+              </section>
+
+              <section id="contact">
+                <Contact />
+              </section>
+            </>
+          )}
+        </main>
+
+        {/* Footer */}
+        <footer>
+          <Footer />
+        </footer>
+      </div>
+
+      <Analytics />
+    </>
   );
 }
