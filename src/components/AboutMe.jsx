@@ -13,33 +13,27 @@ export default function AboutMe({ onComplete }) {
 
     const loop = () => {
       if (!deleting) {
-        // Typing phase
         if (i < command.length) {
           setTypedCommand(command.slice(0, i + 1));
           i++;
           timeout = setTimeout(loop, 100);
         } else {
-          // Finished typing
           if (!hasShownContent) {
             setShowContent(true);
             setHasShownContent(true);
             if (onComplete) onComplete();
           }
-
-          // Pause, then start deleting
           timeout = setTimeout(() => {
             deleting = true;
             loop();
           }, 1500);
         }
       } else {
-        // Deleting phase
         if (i > 0) {
           setTypedCommand(command.slice(0, i - 1));
           i--;
           timeout = setTimeout(loop, 50);
         } else {
-          // Pause, then type again
           deleting = false;
           timeout = setTimeout(loop, 800);
         }
@@ -61,7 +55,7 @@ export default function AboutMe({ onComplete }) {
         </pre>
       </div>
 
-      {/* Bio content (stays after first reveal) */}
+      {/* Bio content */}
       {showContent && (
         <div className="w-full max-w-4xl flex flex-col md:flex-row items-center gap-8 mt-6 animate-fade-in-up">
           {/* Profile image */}
@@ -87,7 +81,9 @@ export default function AboutMe({ onComplete }) {
               <span className="text-cyan-400">Docker</span>,{" "}
               <span className="text-cyan-400">Kubernetes</span>,{" "}
               <span className="text-cyan-400">Helm</span>,{" "}
-              <span className="text-cyan-400">CI/CD pipelines</span>, and{" "}
+              <span className="text-cyan-400">CI/CD pipelines</span>,{" "}
+              <span className="text-cyan-400">Terraform</span>,{" "}
+              <span className="text-cyan-400">Ansible</span>, and{" "}
               <span className="text-cyan-400">monitoring</span> with Prometheus
               & Grafana.
             </p>
