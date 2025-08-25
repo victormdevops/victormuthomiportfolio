@@ -100,9 +100,7 @@ My passion lies in building efficient workflows that bridge **development and op
 
 ## 📫 Let's Connect
 
-🌐 [Portfolio Website](#)  
-💼 [LinkedIn](#)  
-🐦 [Twitter](#)  
+🌐 https://victormuthomiportfolio.vercel.app/  
 📧 victorm.devops@gmail.com
 
 ---
