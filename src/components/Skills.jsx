@@ -11,6 +11,8 @@ import {
   SiRailway,
   SiRender,
   SiGnubash,
+  SiTerraform,
+  SiAnsible,
 } from "react-icons/si";
 import ManualScrollHint from "./ManualScrollHint";
 
@@ -82,6 +84,8 @@ export default function Skills() {
           <Skill icon={<SiHelm />} name="Helm" />
           <Skill icon={<FaLinux />} name="Linux" />
           <Skill icon={<SiGnubash />} name="Bash" />
+          <Skill icon={<SiTerraform />} name="Terraform" />
+          <Skill icon={<SiAnsible />} name="Ansible" />
           <Skill icon={<SiPrometheus />} name="Prometheus" />
           <Skill icon={<SiGrafana />} name="Grafana" />
           <Skill icon={<FaGithub />} name="GitHub Actions" />

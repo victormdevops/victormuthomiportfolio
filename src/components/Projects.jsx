@@ -45,7 +45,7 @@ export default function Projects({ onComplete }) {
       name: "RazorBill (Streaming Platform)",
       desc: "Streaming platform showcasing Kubernetes orchestration, monitoring, and CI/CD pipelines.",
       devops:
-        "☸️ Kubernetes (Minikube · K3d) · 🐳 Docker · ⚡ GitHub Actions · 📊 Prometheus + Grafana · ⎈ Helm",
+        "☸️ Kubernetes (Minikube · K3d) · 🐳 Docker · ⚡ GitHub Actions · 📊 Prometheus + Grafana · ⎈ Helm · 🛠️ Terraform · 🤖 Ansible",
       backend: "Node.js (MERN)",
       frontend: "React",
       github: "https://github.com/victormdevops/razorbill",
